@@ -8,6 +8,7 @@ CREATE TABLE protests
 	id INT NOT NULL AUTO_INCREMENT,
 	event_title VARCHAR(300) NOT NULL,
 	event_date DATETIME NOT NULL,
+	event_time DATETIME NOT NULL,
 	organization VARCHAR(300) NOT NULL,
 	event_loc VARCHAR(300) NOT NULL,
 	event_desc VARCHAR(300) NOT NULL,	
@@ -19,6 +20,7 @@ CREATE TABLE events
 	id INT NOT NULL AUTO_INCREMENT,
 	event_title VARCHAR(300) NOT NULL,
 	event_date DATETIME NOT NULL,
+	event_time DATETIME NOT NULL,
 	organization VARCHAR(300) NOT NULL,
 	event_loc VARCHAR(300) NOT NULL,
 	event_desc VARCHAR(300) NOT NULL,	
@@ -30,10 +32,11 @@ CREATE TABLE dates
 	id INT NOT NULL AUTO_INCREMENT,
 	event_title VARCHAR(300) NOT NULL,
 	event_date DATETIME NOT NULL,
+	event_time DATETIME NOT NULL,
 	organization VARCHAR(300) NOT NULL,
 	event_loc VARCHAR(300) NOT NULL,
 	event_desc VARCHAR(300) NOT NULL,	
-	PRIMARY KEY (id)
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE stories
