@@ -1,3 +1,5 @@
+config/config.json
+
 node_modules/
 
 # Logs
@@ -104,3 +106,5 @@ dist
 
 # TernJS port file
 .tern-port
+
+
