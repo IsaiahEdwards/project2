@@ -1,6 +1,10 @@
-INSERT INTO cats (name) VALUES ('Meeses');
-INSERT INTO cats (name) VALUES ('Bobbi');
-INSERT INTO cats (name, sleepy) VALUES ('Sylvester', true);
-INSERT INTO cats (name, sleepy) VALUES ('Marilyn Manson', true);
-INSERT INTO cats (name, sleepy) VALUES ('Joe Biden', true);
-INSERT INTO cats (name) VALUES ('Owens');
+USE organeyez_db;
+SELECT * FROM protests;
+SELECT * FROM events;
+SELECT * FROM dates;
+SELECT * FROM stories;
+SELECT * FROM vitalInfo;
+SELECT * FROM localOfficials;
+SELECT * FROM businesses;
+SELECT * FROM donations;
+SELECT * FROM petitions;
