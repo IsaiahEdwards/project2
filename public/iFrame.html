@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>iFrame Module</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Add dist stylesheet -->
+    <!-- <link rel="stylesheet" href="../public/stylesheets/dist/tabbis-reset.css"> -->
+    <link rel="stylesheet" href="../public/stylesheets/dist/tabbis-style-default.css">
+
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="articles-frame ">
+            <h2 class="">Articles</h2>
+            <div data-tabs>
+                <button class="article-tab-1">Stories</button>
+                <button class="article-tab-2">Vital Info</button>
+                <button class="article-tab-3">Local Officials</button>
+            </div>
+
+            <div data-panes class="articles-data-frame">
+                <div class="article-pane-1">
+                    <nav class="table-responsive mb-2">
+                        <ul class="pagination justify-content-center pagination-sm">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="article-pane-2">Pane2</div>
+                <div class="article-pane-3">Pane3</div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="links-frame ">
+            <h2 class="">Links</h2>
+            <div data-tabs>
+                <button class="link-tab-1">Businesses</button>
+                <button class="link-tab-2">Donations</button>
+                <button class="link-tab-3">Petitions</button>
+            </div>
+
+            <div data-panes class="links-data-frame">
+                <div class="link-pane-1">
+                    <nav class="table-responsive mb-2">
+                        <ul class="pagination justify-content-center pagination-sm">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="link-pane-2">Pane2</div>
+                <div class="link-pane-3">Pane3</div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <!-- Add tabbis script -->
+    <script src="../public/js/dist/tabbis.es6.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            const loremSamp = `Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit.
+                        Nulla in vulputate
+                        mauris. Aliquam quis malesuada felis, eget fringilla lacus. Vivamus convallis augue id ultrices
+                        vulputate. Curabitur venenatis massa id lorem vehicula maximus. Donec sed turpis placerat,
+                        ultricies
+                        tellus ac, condimentum nisl. In viverra dolor vitae magna molestie, ut pulvinar tellus mollis.
+                        Orci
+                        varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+                        Aenean eu fermentum neque. Mauris volutpat sem vel sodales malesuada. Nulla id leo consectetur,
+                        laoreet purus scelerisque, porta eros. Integer at libero id purus malesuada viverra ac a sapien.
+                        Suspendisse tempor elit elit, et viverra lectus interdum congue. Nulla gravida dolor sit amet
+                        consequat facilisis. Maecenas faucibus metus a sapien auctor suscipit. Sed vulputate turpis id
+                        nibh
+                        rutrum eleifend. Pellentesque sagittis felis nec mauris fermentum, nec consequat nisi placerat.
+                        Nam
+                        et tincidunt arcu. Cras at maximus magna. Suspendisse pharetra varius pulvinar. Quisque
+                        venenatis a
+                        magna et finibus.
+
+                        Praesent suscipit nec dui eget lobortis. Curabitur sed tellus aliquet, suscipit nibh consequat,
+                        vulputate ex. Fusce fringilla eros vitae quam convallis, eu varius neque molestie. Curabitur
+                        purus
+                        purus, dapibus ut lacus eget, tincidunt euismod leo. Etiam vitae lacus hendrerit, gravida magna
+                        non,
+                        dignissim mi. Aliquam vitae pellentesque metus, vitae condimentum erat. Fusce quis augue eget
+                        metus
+                        gravida feugiat. Nulla viverra egestas lobortis.`
+
+            const $div = $("<div>")
+            const $divClass = $div.addClass("article-pane-1");
+            const $h3 = $("<h3>")
+            const $h3Class = $h3.addClass("article-title");
+            const $p = $("<p>");
+            const $pAttr = $p.attr({ 'class': `article-data`, 'name': `article-body-1` });
+
+            $('.article-pane-1').prepend($div.append([$h3Class.html(`Article Title`), $pAttr.html(`${loremSamp}`)]));
+
+
+
+        });
+    </script>
+</body>
+
+</html>
