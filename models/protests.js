@@ -6,6 +6,7 @@ module.exports = function(sequelize, DataTypes) {
      organization: DataTypes.STRING,
      event_loc: DataTypes.STRING,
      event_desc: DataTypes.STRING,
+     event_type: DataTypes.STRING
     });
     return Protest;
   };
