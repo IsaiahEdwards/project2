@@ -1,18 +1,14 @@
-{
-    "development": {
-        "username": "root",
-        "password": "password",
-        "database": "organeyez_db",
-        "host": "localhost",
-        "port": "3306",
-        "dialect": "mysql"
-        
-    },
-    "test": {
-        "dialect": "mysql"
-    },
-    "production": {
-        "use_env_variable": "JAWSDB_URL",
-        "dialect": "mysql"
-    }
+"development": {
+    "username": "root",
+    "password": null,
+    "database": "passport_demo",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+},
+"test": {
+    "dialect": "mysql"
+},
+"production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
 }
