@@ -12,13 +12,16 @@ module.exports = function(app) {
     }
     // database queries
 db.Protest.findAll().then(function(dateResults) {
-
   db.Stories.findAll().then(function(articleResults) {
-    const dataObj = {dateResults, articleResults};
-    console.log("dataObj" + JSON.stringify(dataObj));
-    res.render("index", { datesObj : dataObj});
-  })
-})
+    // db.links.findAll().then(function(linkResults) {
+      const dataObj = {dateResults, articleResults};
+      console.log("dataObj" + JSON.stringify(dataObj));
+      res.render("index", {datesObj : dataObj});
+      // res.render("index", {articlesObj : dataObj})
+      // res.render("index", {linksObj : dataObj})
+    // });
+  });
+});
 
 
 
