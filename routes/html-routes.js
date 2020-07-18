@@ -4,12 +4,7 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-<<<<<<< HEAD
-module.exports = function(app) {
-  // get method for content and users
-=======
 module.exports = function (app) {
->>>>>>> cc0bfbdaecaea64e5aea541ab3362d515dc74328
   app.get("/", (req, res) => {
     // database queries
     db.Events.findAll().then(function(eventResults, err) {
@@ -75,9 +70,18 @@ module.exports = function (app) {
       res.redirect("/admin");
     }
    res.render("messageBoard");
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    
   });
-  
+
+  app.get("/userFeedback", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/admin");
+    }
+    res.render("userFeedback");
+
+  });
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/admin", isAuthenticated, (req, res) => {
