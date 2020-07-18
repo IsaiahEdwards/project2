@@ -4,7 +4,6 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-
 module.exports = function (app) {
   // get method for content and users
   app.get("/", (req, res) => {
@@ -36,15 +35,14 @@ module.exports = function (app) {
           const dataObj = { eventResults, articleResults, linkResults };
 
           console.log("dataObj" + JSON.stringify(dataObj));
-
-          res.render("index", { dataObj: dataObj });
-
-        // }).catch();
+          res.render("index", { eventsObj: dataObj });
+          res.render("index", { articlesObj: dataObj });
+          res.render("index", { linksObj: dataObj });
+          // }).catch();
+        }).catch();
       }).catch();
     }).catch();
   });
-
-
 
 
 

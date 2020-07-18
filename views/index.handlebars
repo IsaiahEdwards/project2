@@ -75,25 +75,47 @@
 	</div>
 	<!-- links area -->
 	<h1 id="links">LINKS</h1>
-	<div class="card text-center" id="links">
+	<div class="card text-center">
 		<div class="card-header">
-			<ul class="nav nav-tabs card-header-tabs">
+			<ul class="nav nav-tabs card-header-tabs" role="tablist">
 				<li class="nav-item">
-					<a class="nav-link active" href="#">Active</a>
+					<a class="nav-link active" id="businesses-tab" data-toggle="tab" href="#businesses" role="tab"
+						aria-controls="businesses" aria-selected="true">Businesses</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
+					<a a class="nav-link" id="donate-tab" data-toggle="tab" href="#donate" role="tab"
+						aria-controls="donate" aria-selected="false">Donations</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="#">Disabled</a>
+					<a class="nav-link" id="petitions-tab" data-toggle="tab" href="#petitions" role="tab"
+						aria-controls="petitions" aria-selected="false">Petitions</a>
 				</li>
 			</ul>
 		</div>
-		<div class="card-body">
-			<h5 class="card-title">Special title treatment</h5>
-			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			<a href="#" class="btn btn-primary">Go somewhere</a>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="businesses" role="tabpanel" aria-labelledby="businesses-tab">
+				<div class="card-body">
+					<h5 class="card-title">Businesses</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="donate" role="tabpanel" aria-labelledby="donate-tab">
+				<div class="card-body">
+					<h5 class="card-title">Donations</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="petitions" role="tabpanel" aria-labelledby="petitions-tab">
+				<div class="card-body">
+					<h5 class="card-title">Petitions</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
 		</div>
+
 	</div>
 	<!-- suggestion area -->
 	<h1 id="suggestion">SUGGESTIONS</h1>

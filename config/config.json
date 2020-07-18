@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "Simran660",
+        "password": "root",
         "database": "organeyez_db",
         "host": "localhost",
         "port": 3306,
