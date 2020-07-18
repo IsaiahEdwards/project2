@@ -1,16 +1,11 @@
-{{!-- {{#each datesObj.dateResults}}
-<p>{{this.event_title}}</p>
-{{/each}} --}}
+
 <div class="container">
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#login">
-            login
-        </a>
+	<!--navbar-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+			aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -33,68 +28,107 @@
     <h1 id="home">CALENDER</h1>
     <div class="card">
    <div id='calendar'></div>
+	</div>
 
-    </div>
-    <!-- articles area -->
-    <h1 id="articles">ARTICLES</h1>
-    <div class="card text-center">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Disabled</a>
-                </li>
-            </ul>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <!-- links area -->
-    <h1 id="links">LINKS</h1>
-    <div class="card text-center" id="links">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Disabled</a>
-                </li>
-            </ul>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <!-- suggestion area -->
-    <h1 id="suggestion">SUGGESTIONS</h1>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label>Full Name</label>
-                <input type="name" class="form-control" id="suggestionName" placeholder="Aaron Young ">
-            </div>
-            <div class="form-group">
-                <label>suggestion</label>
-                <textarea class="form-control" id="suggetsion" rows="3"></textarea>
+	<!-- articles area -->
+	<h1 id="articles">ARTICLES</h1>
+	<div class="card text-center">
+		<div class="card-header">
+			<ul class="nav nav-tabs card-header-tabs" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="stories-tab" data-toggle="tab" href="#stories" role="tab"
+						aria-controls="stories" aria-selected="true">Stories</a>
+				</li>
+				<li class="nav-item">
+					<a a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info"
+						aria-selected="false">Vital Info</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="local-tab" data-toggle="tab" href="#local" role="tab" aria-controls="local"
+						aria-selected="false">Local Officials</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="stories" role="tabpanel" aria-labelledby="stories-tab">
+				<div class="card-body">
+					<h5 class="card-title">Stories</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+				<div class="card-body">
+					<h5 class="card-title">Vital Info</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="local" role="tabpanel" aria-labelledby="local-tab">
+				<div class="card-body">
+					<h5 class="card-title">Local Officials</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
 
-            </div>
-            <a href="#" class="btn btn-primary">submit</a>
-        </div>
-    </div>
+	</div>
+	<!-- links area -->
+	<h1 id="links">LINKS</h1>
+	<div class="card text-center" id="links">
+		<div class="card-header">
+			<ul class="nav nav-tabs card-header-tabs">
+				<li class="nav-item">
+					<a class="nav-link active" href="#">Active</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#">Disabled</a>
+				</li>
+			</ul>
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">Special title treatment</h5>
+			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+	</div>
+	<!-- suggestion area -->
+	<h1 id="suggestion">SUGGESTIONS</h1>
+	<div class="card">
+		<div class="card-body">
+			<div class="form-group">
+				<label>Full Name</label>
+				<input type="name" class="form-control" id="suggestionName" placeholder="Aaron Young ">
+			</div>
+			<div class="form-group">
+				<label>suggestion</label>
+				<textarea class="form-control" id="suggetsion" rows="3"></textarea>
+
+			</div>
+			<a href="#" class="btn btn-primary">submit</a>
+		</div>
+	</div>
 
 </div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script>
+	const newComment = {
+		name: $("#name-field").val().trim(),
+		comment: $("#comment-text").val().trim()
+	}
+
+	$("#comment-submit").on("click", function (event) {
+		event.preventDefault();
+		console.log("success")
+		$.post("/api/feedback", newComment).then(function (data) {
+			console.log(data.name)
+		});
+	});
+</script>
+

@@ -1,8 +1,9 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const { create } = require("express-handlebars");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -61,4 +62,9 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.post("/api/feedback", (req, res) => {
+    db.Feedback.create(req.body).then
+  })
+
 };
