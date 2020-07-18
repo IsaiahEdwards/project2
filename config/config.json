@@ -1,17 +1,17 @@
 {
     "development": {
-    "username": "root",
-    "password": "root",
-    "database": "database_development",
-    "host": "localhost",
-    "port": 3306,
-    "dialect": "mysql"
-},
-"test": {
-    "dialect": "mysql"
-},
-"production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
-}
+        "username": "root",
+        "password": null,
+        "database": "organeyez_db",
+        "host": "localhost",
+        "port": 3306,
+        "dialect": "mysql"
+    },
+    "test": {
+        "dialect": "mysql"
+    },
+    "production": {
+        "use_env_variable": "JAWSDB_URL",
+        "dialect": "mysql"
+    }
 }

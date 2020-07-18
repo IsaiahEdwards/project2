@@ -1,11 +1,23 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const { create } = require("express-handlebars");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
+  app.get("/api/events", (req, res) => {
+    // database queries
+    db.Events.findAll().then(function(eventResults, err) {
+      if (err) {
+        throw err
+      }
+      console.log("events");
+      res.json({events : eventResults})
+    }).catch();
+    });
+
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
@@ -50,4 +62,9 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.post("/api/feedback", (req, res) => {
+    db.Feedback.create(req.body).then
+  })
+
 };
