@@ -17,6 +17,7 @@ const db = require("./models");
 // Creating express app and configuring middleware needed for authentication
 const app = express();
 
+
 // Set Handlebars.
 app.engine(
   "handlebars",

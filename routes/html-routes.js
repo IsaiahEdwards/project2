@@ -4,7 +4,12 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
+<<<<<<< HEAD
+module.exports = function(app) {
+  // get method for content and users
+=======
 module.exports = function (app) {
+>>>>>>> cc0bfbdaecaea64e5aea541ab3362d515dc74328
   app.get("/", (req, res) => {
     // database queries
     db.Events.findAll().then(function(eventResults, err) {
@@ -12,38 +17,54 @@ module.exports = function (app) {
         throw err
       }
       console.log("events");
+
       db.Articles.findAll().then(function(articleResults, err) {
         if (err) {
           throw err
         }
         console.log("articles");
+
         db.Links.findAll().then(function(linkResults, err) {
-          console.log("links");
             if (err) {
               throw err
             }
-          const dataObj = { eventResults, articleResults, linkResults };
+            console.log("links");
+
+            // db.User.findAll().then(function(userResults, err) {
+            //   if (err) {
+            //     throw err
+            //   }
+            //   console.log("User");
+
+          const dataObj = { eventResults, articleResults, linkResults};
+     
           console.log("dataObj" + JSON.stringify(dataObj));
           res.render("index", { eventsObj: dataObj });
           res.render("index", { articlesObj: dataObj });
           res.render("index", { linksObj: dataObj });
-        }).catch();
+        // }).catch();
       }).catch();
     }).catch();
+  }).catch();
   });
 
+
+
+
+
+  //login queries
   app.get("/login", (req, res) => {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the admin page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/admin");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   app.get("/signup", (req, res) => {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the admin page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/admin");
     }
   res.render("signup");
   });
@@ -51,7 +72,7 @@ module.exports = function (app) {
   app.get("/messageboard", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/admin");
     }
    res.render("messageBoard");
     res.sendFile(path.join(__dirname, "../public/signup.html"));
@@ -59,7 +80,7 @@ module.exports = function (app) {
   
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+  app.get("/admin", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/admin.html"));
   });
 };
