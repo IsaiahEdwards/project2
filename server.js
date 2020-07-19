@@ -1,7 +1,7 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
-const path = require('path'); 
+const path = require('path');
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const Handlebars = require("handlebars");
@@ -11,7 +11,7 @@ const {
 } = require("@handlebars/allow-prototype-access");
 
 // Setting up port and requiring models for syncing
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3002;
 const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
