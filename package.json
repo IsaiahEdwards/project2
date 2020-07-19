@@ -26,6 +26,7 @@
     "express-session": "^1.17.1",
     "init": "^0.1.2",
     "mysql2": "^2.1.0",
+    "node-gyp": "^7.0.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sequelize": "^6.3.3"
