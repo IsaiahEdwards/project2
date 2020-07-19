@@ -1,38 +1,38 @@
-<div class="container">
-	<!--navbar-->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-			aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+		aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item active">
-					<a class="nav-link" href="#home">Home</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#articles">Articles</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link " href="#links">links</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link " href="#suggestion">suggestion</a>
-				</li>
-			</ul>
-			<a class="nav-link" href="/login" style="color:black;">Login</a>
-		</div>
-	</nav>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item active">
+				<a href="#home" class="btn btn-dark offset-1 mr-3"> Home </a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#articles">Articles</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link " href="#links">Links</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link " href="#suggestion">Suggestion</a>
+			</li>
+		</ul>
+		<a class="nav-link" href="/login" style="color:black;">Login</a>
+	</div>
+</nav>
+<div class="container">
 	<!-- calender area -->
 	<h1 id="home">CALENDAR</h1>
-	<div class="card" id="calendar-card">
+	<div class="card mb-5" id="calendar-card">
 		<div id='calendar'></div>
 	</div>
 
 	<!-- articles area -->
 	<h1 id="articles">ARTICLES</h1>
-	<div class="card text-center" id="article-card">
+	<div class="card mb-5" id="article-card">
 		<div class="card-header">
 			<ul class="nav nav-tabs card-header-tabs" role="tablist">
 				<li class="nav-item">
@@ -124,7 +124,7 @@
 
 	<!-- links area -->
 	<h1 id="links">LINKS</h1>
-	<div class="card text-center" id="links-card">
+	<div class="card mb-5" id="links-card">
 		<div class="card-header">
 			<ul class="nav nav-tabs card-header-tabs" role="tablist">
 				<li class="nav-item">
@@ -260,14 +260,14 @@
 			<div class="form-group">
 				<form class="feedback"></form>
 				<label>Full Name</label>
-				<input type="name" class="form-control" id="name-field" placeholder="Aaron Young ">
+				<input type="name" class="form-control" id="name-field">
 			</div>
 			<div class="form-group">
 				<label>suggestion</label>
-				<textarea class="form-control" id="comment-text" rows="3"></textarea>
+				<textarea class="form-control" id="comment-text" rows="5"></textarea>
 
 			</div>
-			<a class="btn btn-primary" id="comment-submit">submit</a>
+			<a class="btn btn-primary" id="comment-submit">Submit</a>
 		</div>
 	</div>
 </div>

@@ -5,43 +5,195 @@
   <title>Passport Authentication</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="stylesheets/style.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ca89a4b9f5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a href="./" class="btn btn-dark offset-1 mr-3"> Home </a>
+        </li>
+      </ul>
+      <a class="nav-link" href="/login" style="color:black;">Login</a>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Add a user</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
 
-      </div>
+  <div class="container">
+
+    <h1 class="page-headers">SignUp</h1>
+    <div class="formholder">
+      <form id="newUsr">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label class="field-headers" for="inputEmail4">First Name</label>
+            <input type="fname" class="form-control" id="inputEmail4" placeholder="First Name">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label class="field-headers" for="inputEmail4">Last Name</label>
+            <input type="lname" class="form-control" id="inputEmail4" placeholder="Last Name">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label class="field-headers" for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label class="field-headers" for="inputPassword4">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          </div>
+        </div>
+
+        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span> <span class="msg"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+
+            <label class="field-headers" for="inputName">Security Question 1</label>
+            <select id="inputState" class="form-control">
+              <option>What is your Favorite Movie?</option>
+              <option>What is your Mother's Maiden Name?</option>
+              <option>What is your childhood Name?</option>
+              <option>Which Collage did you Attend?</option>
+              <option>What is your Favorite Dish?</option>
+            </select>
+            <br>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="">
+
+
+          </div>
+          <div class="form-group col-md-6">
+            <label class="field-headers" for="inputPassword4">Security Answers 2</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          </div>
+        </div>
+
+
+
+        <div class="form-group col-md-6">
+
+          <label class="field-headers" for="inputState">Security Question 2</label>
+          <select id="inputState" class="form-control">
+            <option>What is your Favorite Movie?</option>
+            <option>What is your Mother's Maiden Name?</option>
+            <option>What is your childhood Name?</option>
+            <option>Which Collage did you Attend?</option>
+            <option>What is your Favorite Dish?</option>
+
+            <label class="field-headers" for="inputCity">Organization</label>
+            <input type="text" class="form-control" id="inputOrganization">
+
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputState">Organization location</label>
+          <select id="inputState" class="form-control">
+            <option selected>Choose one of them</option>
+            <option>Alabama AL</option>
+            <option>Alaska AK</option>
+            <option>American AS</option>
+            <option>Arizona AZ</option>
+            <option>Arkansas AR</option>
+            <option>California CA</option>
+            <option>Colorado CO</option>
+            <option>Connecticut CT</option>
+            <option>Delaware DE</option>
+            <option>Dist. of Columbia DC</option>
+            <option>Florida FL</option>
+            <option>Georgia GA</option>
+            <option>Guam GU</option>
+            <option>Idaho ID</option>
+            <option>Illinois IL</option>
+            <option>Indiana IN</option>
+            <option>Iowa IA</option>
+            <option>Kansas KS</option>
+            <option>Kentucky KY</option>
+            <option>Louisiana LA</option>
+            <option>Maine ME</option>
+            <option>Maryland MD</option>
+            <option>Marshall MH</option>
+            <option>Massachusetts MA</option>
+            <option>Michigan MI</option>
+            <option>Micronesia FM</option>
+            <option>Minnesota MN</option>
+            <option>Mississippi MS</option>
+            <option>Missouri MO</option>
+            <option>ontana MT</option>
+            <option>Nebraska NE </option>
+            <option>Nevada NV</option>
+            <option>New Hampshire NH</option>
+            <option>New Jersey NJ</option>
+            <option>New Mexico NM</option>
+            <option>New York NY</option>
+            <option>North Carolina NC</option>
+            <option>North Dakota ND</option>
+            <option>Northern Marianas MP</option>
+            <option>Ohio Ohio OH</option>
+            <option>Oklahoma OK</option>
+            <option>Oregon OR</option>
+            <option>Palau</option>
+            <option>Pennsylvania PA</option>
+            <option>Puerto Rico PR</option>
+            <option>Rhode Island RI</option>
+            <option>South Carolina SC</option>
+            <option>South Dakota SD</option>
+            <option>Tennessee TN</option>
+            <option>Utah Utah UT</option>
+            <option>Vermont VT</option>
+            <option>Virginia VA</option>
+            <option>Virgin Islands VI</option>
+            <option>Washington WA</option>
+            <option>West Virginia WV</option>
+            <option>Wisconsin WI</option>
+            <option>Wyoming WY</option>
+
+          </select>
+
+
+          </select>
+          <br>
+          <input type="text" class="form-control" id="inputEmail4" placeholder="">
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to terms and conditions
+            </label>
+          </div>
+        </div>
     </div>
+
+    <button type="submit" class="btn btn-info">Sign up!</button>
+
+    </form>
+
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </form>
+  </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/signup.js"></script>
 
 </body>
