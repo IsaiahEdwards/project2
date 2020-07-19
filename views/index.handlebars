@@ -1,4 +1,3 @@
-
 <div class="container">
 	<!--navbar-->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -7,27 +6,27 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#articles">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#links">links</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#suggestion">suggestion</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- calender area -->
-    <h1 id="home">CALENDER</h1>
-    <div class="card">
-   <div id='calendar'></div>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#articles">Articles</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#links">links</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#suggestion">suggestion</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- calender area -->
+	<h1 id="home">CALENDER</h1>
+	<div class="card">
+		<div id='calendar'></div>
 	</div>
 
 	<!-- articles area -->
@@ -76,25 +75,47 @@
 	</div>
 	<!-- links area -->
 	<h1 id="links">LINKS</h1>
-	<div class="card text-center" id="links">
+	<div class="card text-center">
 		<div class="card-header">
-			<ul class="nav nav-tabs card-header-tabs">
+			<ul class="nav nav-tabs card-header-tabs" role="tablist">
 				<li class="nav-item">
-					<a class="nav-link active" href="#">Active</a>
+					<a class="nav-link active" id="businesses-tab" data-toggle="tab" href="#businesses" role="tab"
+						aria-controls="businesses" aria-selected="true">Businesses</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
+					<a a class="nav-link" id="donate-tab" data-toggle="tab" href="#donate" role="tab"
+						aria-controls="donate" aria-selected="false">Donations</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="#">Disabled</a>
+					<a class="nav-link" id="petitions-tab" data-toggle="tab" href="#petitions" role="tab"
+						aria-controls="petitions" aria-selected="false">Petitions</a>
 				</li>
 			</ul>
 		</div>
-		<div class="card-body">
-			<h5 class="card-title">Special title treatment</h5>
-			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			<a href="#" class="btn btn-primary">Go somewhere</a>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="businesses" role="tabpanel" aria-labelledby="businesses-tab">
+				<div class="card-body">
+					<h5 class="card-title">Businesses</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="donate" role="tabpanel" aria-labelledby="donate-tab">
+				<div class="card-body">
+					<h5 class="card-title">Donations</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="petitions" role="tabpanel" aria-labelledby="petitions-tab">
+				<div class="card-body">
+					<h5 class="card-title">Petitions</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
 		</div>
+
 	</div>
 	<!-- suggestion area -->
 	<h1 id="suggestion">SUGGESTIONS</h1>
@@ -102,20 +123,21 @@
 		<div class="card-body">
 			<div class="form-group">
 				<label>Full Name</label>
-				<input type="name" class="form-control" id="suggestionName" placeholder="Aaron Young ">
+				<input type="name" class="form-control" id="name-field" placeholder="Aaron Young ">
 			</div>
 			<div class="form-group">
 				<label>suggestion</label>
-				<textarea class="form-control" id="suggetsion" rows="3"></textarea>
+				<textarea class="form-control" id="comment-text" rows="3"></textarea>
 
 			</div>
-			<a href="#" class="btn btn-primary">submit</a>
+			<a class="btn btn-primary" id="comment-submit">submit</a>
 		</div>
 	</div>
 
 </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+	crossorigin="anonymous"></script>
 
 <script>
 	const newComment = {
@@ -131,4 +153,3 @@
 		});
 	});
 </script>
-

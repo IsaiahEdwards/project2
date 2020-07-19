@@ -64,7 +64,7 @@ module.exports = function (app) {
   });
 
   app.post("/api/feedback", (req, res) => {
-    db.Feedback.create(req.body).then
+    db.Feedback.create(req.body)
   })
 
 };
