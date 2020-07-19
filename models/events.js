@@ -3,6 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     title: DataTypes.STRING,
     // Date and time
     start: DataTypes.STRING,
+    //end date/time
+    end: DataTypes.STRING,
     // organization
     groupId: DataTypes.STRING,
     // location
