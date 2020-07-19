@@ -2,3 +2,25 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+#comment-submit {
+  color: white;
+}
+
+#calendar-card {
+  margin-bottom: 10rem;
+}
+#article-card {
+  margin-bottom: 10rem;
+}
+#links-card {
+  margin-bottom: 10rem;
+}
+
+.card-body{
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  box-shadow: 5px;
+  }

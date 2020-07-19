@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
-  const Feedback = sequelize.define("Feedback", {
+  const Feedbacks = sequelize.define("Feedbacks", {
     name: DataTypes.STRING,
     comment: DataTypes.STRING,
   });
-  return Feedback;
+  return Feedbacks;
 };
