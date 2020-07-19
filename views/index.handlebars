@@ -1,28 +1,28 @@
-<div class="container">
-	<!--navbar-->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-			aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+		aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item active">
-					<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#articles">Articles</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link " href="#links">links</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link " href="#suggestion">suggestion</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item active">
+				<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#articles">Articles</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link " href="#links">Links</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link " href="#suggestion">Suggestion</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
 	<!-- calender area -->
 	<h1 id="home">CALENDER</h1>
 	<div class="card">
@@ -119,7 +119,7 @@
 	</div>
 	<!-- suggestion area -->
 	<h1 id="suggestion">SUGGESTIONS</h1>
-	<div class="card">
+	<div class="card mb-5">
 		<div class="card-body">
 			<div class="form-group">
 				<label>Full Name</label>
@@ -136,10 +136,23 @@
 
 </div>
 
+<footer role="main" class="footer mt-auto py-3" style="text-align: center; background-color:gray">
+	<div class="container">
+		<span style="color: white;">Place sticky footer content here.</span>
+	</div>
+</footer>
+
+
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 	crossorigin="anonymous"></script>
 
 <script>
+
 	const newComment = {
 		name: $("#name-field").val().trim(),
 		comment: $("#comment-text").val().trim()
