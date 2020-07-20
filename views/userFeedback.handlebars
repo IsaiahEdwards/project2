@@ -51,10 +51,8 @@
         <div class="card-body col-md">
             <div class="form-group">
                 <h1>User Feedback</h1>
-                {{#each dataObj.feedbackResults}}
-                <p>{{this.name}}</p>
-                <p>{{this.comment}}</p>
-                {{/each}}
+                Test
+
                 <div class="table-responsive">
                     <table id="feedback-table" class="table table-bordered table-sm " cellspacing="0" width="100%">
                         <thead id="feedback-head">
@@ -62,25 +60,14 @@
                                 <th>First name</th>
                                 <th>Last name</th>
                                 <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                                <th>Extn.</th>
-                                <th>E-mail</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Tiger</td>
-                                <td>Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                                <td>5421</td>
-                                <td>t.nixon@datatables.net</td>
+                                {{#each dataObj}}
+                                <td>{{this}}</td>
+                                {{/each}}
                             </tr>
                             <tr>
                                 <td>Garrett</td>
@@ -147,24 +134,23 @@
     </div>
 
 
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
     <script>
         $(document).ready(function () {
-            $("h1").css("color", "red")
-
-
-
-            const tHead = $()
-            const tRow = $("#feedback-head")
-
-
-
-
-
+            //$("h1").css("color", "red")
+            /*
+                        $.get("/api/feedback", (feedbackData) => {
+                            console.log(feedbackData.feedback[0].name);
+                            console.log(feedbackData.feedback[0].comment);
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var feedbackEl = function (feedbackData) {
+                                    $("#feedback-table").append(text(feedbackData.feedback[0].comment));
+                                };
+                                feedbackEl();
+                            });
+                        });
+            */
 
             $('#feedback-table').DataTable({
                 "scrollX": true,
