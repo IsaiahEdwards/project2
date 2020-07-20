@@ -278,30 +278,26 @@
 	</div>
 </footer>
 
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-	crossorigin="anonymous"></script>
-
 <script>
+	$(document).ready(function () {
 
-	const newComment = {
-		name: $("#name-field").val().trim(),
-		comment: $("#comment-text").val().trim()
-	}
+		$($".card-title").css("color", "red");
 
-	$("#comment-submit").on("click", function (event) {
-		event.preventDefault();
-		console.log("success")
-		$("#name-field").val("");
-		$("#comment-text").val("");
-		$.post("/api/feedback", newComment).then(function (data) {
-			console.log(data.name)
+
+		const newComment = {
+			name: $("#name-field").val().trim(),
+			comment: $("#comment-text").val().trim()
+		}
+
+		$("#comment-submit").on("click", function (event) {
+			event.preventDefault();
+			console.log("success");
+			$("#name-field").val("");
+			$("#comment-text").val("");
+			$.post("/api/feedback", newComment).then(function (data) {
+				console.log(data.name)
+			});
 		});
-	});
 
+	});
 </script>
