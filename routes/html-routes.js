@@ -100,7 +100,7 @@ module.exports = function(app) {
 
   app.get("/signup", isAuthenticated, (req, res) => {
 
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup");
   });
 
   app.get("/messageboard", isAuthenticated, (req, res) => {
