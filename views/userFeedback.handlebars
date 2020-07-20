@@ -1,3 +1,27 @@
+<style>
+    .feedback-tableWrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    #feedback-table th,
+    td {
+        white-space: nowrap;
+    }
+
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting:before,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_asc:before,
+    table.dataTable thead .sorting_asc_disabled:after,
+    table.dataTable thead .sorting_asc_disabled:before,
+    table.dataTable thead .sorting_desc:after,
+    table.dataTable thead .sorting_desc:before,
+    table.dataTable thead .sorting_desc_disabled:after,
+    table.dataTable thead .sorting_desc_disabled:before {
+        bottom: .5em;
+    }
+</style>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -24,25 +48,117 @@
         </div>
     </div>
     <div class="col-md-5 main-content justify-content-md-right">
-        <div class="card-body offset-4 col-md-12">
-            <div class="form-group col-md-6">
+        <div class="card-body col-md">
+            <div class="form-group">
                 <h1>User Feedback</h1>
+                Test
 
-                <div class="form-group col-md-6">
+                <div class="table-responsive">
+                    <table id="feedback-table" class="table table-bordered table-sm " cellspacing="0" width="100%">
+                        <thead id="feedback-head">
+                            <tr>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Position</th>
 
-                    <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    <br>
-                    <button type="submit" class="btn btn-info">Submit!</button>
-
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {{#each dataObj}}
+                                <td>{{this}}</td>
+                                {{/each}}
+                            </tr>
+                            <tr>
+                                <td>Garrett</td>
+                                <td>Winters</td>
+                                <td>Accountant</td>
+                                <td>Tokyo</td>
+                                <td>63</td>
+                                <td>2011/07/25</td>
+                                <td>$170,750</td>
+                                <td>8422</td>
+                                <td>g.winters@datatables.net</td>
+                            </tr>
+                            <tr>
+                                <td>Ashton</td>
+                                <td>Cox</td>
+                                <td>Junior Technical Author</td>
+                                <td>San Francisco</td>
+                                <td>66</td>
+                                <td>2009/01/12</td>
+                                <td>$86,000</td>
+                                <td>1562</td>
+                                <td>a.cox@datatables.net</td>
+                            </tr>
+                            <tr>
+                                <td>Cedric</td>
+                                <td>Kelly</td>
+                                <td>Senior Javascript Developer</td>
+                                <td>Edinburgh</td>
+                                <td>22</td>
+                                <td>2012/03/29</td>
+                                <td>$433,060</td>
+                                <td>6224</td>
+                                <td>c.kelly@datatables.net</td>
+                            </tr>
+                            <tr>
+                                <td>Airi</td>
+                                <td>Satou</td>
+                                <td>Accountant</td>
+                                <td>Tokyo</td>
+                                <td>33</td>
+                                <td>2008/11/28</td>
+                                <td>$162,700</td>
+                                <td>5407</td>
+                                <td>a.satou@datatables.net</td>
+                            </tr>
+                            <tr>
+                                <td>Brielle</td>
+                                <td>Williamson</td>
+                                <td>Integration Specialist</td>
+                                <td>New York</td>
+                                <td>61</td>
+                                <td>2012/12/02</td>
+                                <td>$372,000</td>
+                                <td>4804</td>
+                                <td>b.williamson@datatables.net</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+
             </div>
 
         </div>
     </div>
 
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/members.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$("h1").css("color", "red")
+            /*
+                        $.get("/api/feedback", (feedbackData) => {
+                            console.log(feedbackData.feedback[0].name);
+                            console.log(feedbackData.feedback[0].comment);
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var feedbackEl = function (feedbackData) {
+                                    $("#feedback-table").append(text(feedbackData.feedback[0].comment));
+                                };
+                                feedbackEl();
+                            });
+                        });
+            */
+
+            $('#feedback-table').DataTable({
+                "scrollX": true,
+                "scrollY": 200,
+            });
+            $('.dataTables_length').addClass('bs-select');
+
+        });
+    </script>
+
     </body>

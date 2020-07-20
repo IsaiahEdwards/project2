@@ -4,26 +4,26 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // get method for content and users
   app.get("/", (req, res) => {
     // database queries
     db.Events.findAll()
-      .then(function(eventResults, err) {
+      .then(function (eventResults, err) {
         if (err) {
           throw err;
         }
         console.log("events");
 
         db.Articles.findAll()
-          .then(function(articleResults, err) {
+          .then(function (articleResults, err) {
             if (err) {
               throw err;
             }
             console.log("articles");
 
             db.Links.findAll()
-              .then(function(linkResults, err) {
+              .then(function (linkResults, err) {
                 if (err) {
                   throw err;
                 }
@@ -58,7 +58,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  
+
 
 
 
@@ -69,7 +69,7 @@ module.exports = function(app) {
   });
 
   app.get("/admin_events", isAuthenticated, (req, res) => {
-    db.Events.findAll().then(function(eventResults, err) {
+    db.Events.findAll().then(function (eventResults, err) {
       if (err) {
         throw err;
       }
@@ -79,7 +79,7 @@ module.exports = function(app) {
   });
 
   app.get("/admin_articles", isAuthenticated, (req, res) => {
-    db.Articles.findAll().then(function(articleResults, err) {
+    db.Articles.findAll().then(function (articleResults, err) {
       if (err) {
         throw err;
       }
@@ -89,7 +89,7 @@ module.exports = function(app) {
   });
 
   app.get("/admin_links", isAuthenticated, (req, res) => {
-    db.Links.findAll().then(function(linkResults, err) {
+    db.Links.findAll().then(function (linkResults, err) {
       if (err) {
         throw err;
       }
@@ -115,12 +115,12 @@ module.exports = function(app) {
   });
 
   app.get("/feedback", isAuthenticated, (req, res) => {
-    db.Feedbacks.findAll().then(function(feedbackResults, err) {
+    db.Feedbacks.findAll().then(function (feedbackResults, err) {
       if (err) {
         throw err;
       }
       console.log("feedback");
-      res.render("userFeedback", { dataObj: feedbackResults});
+      res.render("userFeedback", { dataObj: feedbackResults });
     });
   });
 };
