@@ -98,8 +98,9 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/signup", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  app.get("/signup", isAuthenticated, (req, res) => {
+
+    res.render("signup");
   });
 
   app.get("/messageboard", isAuthenticated, (req, res) => {
