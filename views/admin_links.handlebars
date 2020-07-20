@@ -1,35 +1,92 @@
-   <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/" id="logout">Logout</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="row">
-      <div id="sidebar" class="col-md-2">
-        <p id="menu-heading" class="">Menu</p>
-        <!-- div for listings -->
-        <div id="menu" class="medium-unstack">
-          <button class="menu-btn" ><a class="nav-link" href="/members" style="color:black;">Dashboard</a></button>
-          <button class="menu-btn" ><a class="nav-link" href="/admin_events" style="color:black;">Events</a></button>
-          <button class="menu-btn" ><a class="nav-link" href="/admin_articles" style="color:black;">Articles</a></button>
-          <button class="menu-btn" ><a class="nav-link" href="/admin_links" style="color:black;">Links</a></button>
-          <button class="menu-btn" ><a class="nav-link" href="/signup" style="color:black;">Add User</a></button>
-          <button class="menu-btn" ><a class="nav-link" href="/#" style="color:black;">Messageboard (Coming Soon...)</a></button>
-          <button class="menu-btn" ><a class="nav-link" href="/feedback" style="color:black;">User Feedback</a></button>
-        </div>
-      </div>
-      <div class="col-md-5 main-content justify-content-md-right">
-        <div class="card-body offset-4 col-md-12" >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident rem illo earum veritatis sapiente quas itaque assumenda quisquam sit! Cumque a rem beatae, adipisci quaerat repellat voluptatem quibusdam aut. Nam dignissimos accusamus adipisci qui optio ratione mollitia quod, reprehenderit quisquam.
-        </div>
-
-      </div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/" id="logout">Logout</a>
     </div>
+  </div>
+</nav>
+
+<div class="row">
+  <div id="sidebar" class="col-md-2">
+    <p id="menu-heading" class="">Menu</p>
+    <!-- div for listings -->
+    <div id="menu" class="medium-unstack">
+      <button class="menu-btn"><a class="nav-link" href="/members" style="color:black;">Dashboard</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/admin_events" style="color:black;">Events</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/admin_articles" style="color:black;">Articles</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/admin_links" style="color:black;">Links</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/signup" style="color:black;">Add User</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/#" style="color:black;">Messageboard (Coming
+          Soon...)</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/feedback" style="color:black;">User Feedback</a></button>
+    </div>
+  </div>
+  <div class="col-md-5 main-content justify-content-md-right">
+
+    <h1>Manage Links</h1>
+
+    <div class="card-body">
+      <h3>Add Link</h3>
+
+      <form>
+        <div class="form-group">
+          <label for="link-text">Link text</label>
+          <input type="text" class="form-control" id="link-text">
+        </div>
+        <div class="form-group">
+          <label for="rel-link">URL</label>
+          <input type="text" class="form-control" id="rel-link">
+        </div>
+        <div class="form-group">
+          <label for="link-labels">Section</label>
+          <select class="form-control" id="link-labels" name="link-labels">
+            <option value="businesses">Businesses</option>
+            <option value="donations">Donations</option>
+            <option value="petitions">Petitions</option>
+          </select>
+        </div>
+        <a class="btn btn-primary" id="link-submit">Submit</a>
+      </form>
+    </div>
+  </div>
+
+</div>
+</div>
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/members.js"></script>
-  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/members.js"></script>
+<script>
+  $("#link-submit").on("click", function (event) {
+    event.preventDefault();
+    console.log("Success");
+    const addLink = {
+      $("#link-text").val().trim(),
+      $("#rel-link").val().trim(),
+      $("#link-labels").val().trim()
+    };
+    $.ajax("/api/links", {
+      type: "POST",
+      data: addLink
+    }).then(
+      function () {
+        console.log("success")
+        location.reload();
+      }
+    )
+
+  });
+  })
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
