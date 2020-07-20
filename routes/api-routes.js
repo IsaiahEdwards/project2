@@ -40,6 +40,33 @@ module.exports = function(app) {
       })
       .catch();
   });
+  app.put("/api/events", function(req, res) {
+    db.Events.update({
+      title: req.body.title,
+      start: req.body.start,
+      end: req.body.end,
+      groudId: req.body.groudId,
+      location: req.body.location,
+      type: req.body.type,
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(eventResults) {
+      res.json(eventResults);
+    });
+  });
+  app.delete("/api/events/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Events.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(eventResults) {
+      res.json(eventResults);
+    });
+
+  });
 
   // Articles
   app.get("/api/articles", (req, res) => {
@@ -70,6 +97,32 @@ module.exports = function(app) {
       })
       .catch();
   });
+  app.put("/api/articles", function(req, res) {
+    db.Articles.update({
+      article_title: req.body.article_title,
+      article_author: req.body.article_author,
+      article_source: req.body.article_source,
+      article_body: req.body.article_body,
+      article_type: req.body.article_type
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(articlesResults) {
+      res.json(articlesResults);
+    });
+  });
+  app.delete("/api/articles/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Articles.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(articlesResults) {
+      res.json(articlesResults);
+    });
+
+  });
 
   // Links
   app.get("/api/links", (req, res) => {
@@ -97,6 +150,30 @@ module.exports = function(app) {
         console.log("links" + req);
       })
       .catch();
+  });
+  app.put("/api/links", function(req, res) {
+    db.Links.update({
+      link_title: req.body.link_title,
+      link_text: req.body.link_text,
+      link_type: req.body.link_type
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(linkResults) {
+      res.json(linkResults);
+    });
+  });
+  app.delete("/api/links/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Links.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(linkResults) {
+      res.json(linkResults);
+    });
+
   });
 
   // Feedback
