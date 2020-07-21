@@ -32,11 +32,11 @@ module.exports = function(app) {
       var hbsObject = {
         articles: articleResults.map((elem) => {
           return {
-            article_title: elem.article_title,
-            article_author: elem.article_author,
-            article_source: elem.article_source,
-            article_body: elem.article_body,
-            article_type: elem.article_type,
+            title: elem.article_title,
+            author: elem.article_author,
+            source: elem.article_source,
+            body: elem.article_body,
+            type: elem.article_type,
           };
         }),
       };
