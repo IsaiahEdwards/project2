@@ -52,11 +52,11 @@
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="stories" role="tabpanel" aria-labelledby="stories-tab">
 				<div class="card-body">
-					<h5 class="card-title" >Stories</h5>
+					<h5 class="card-title">Stories</h5>
 					<div id="stories-card" class="card-body">
 						{{#each articles}}
 						{{articles}}
-						{{>data}}
+						{{>pubArtPart}}
 						{{/each}}
 					</div>
 					<a href="#" class="btn btn-primary">Go somewhere</a>
@@ -135,33 +135,8 @@
 				<div class="card-body">
 					<h5 class="card-title">Businesses</h5>
 					<p class="card-text">
-					<ul>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
-						title
-						<li>somekindoflink</li>
+					<ul id="link-card">
+
 					</ul>
 					</p>
 					<a href="#" class="btn btn-primary">Go somewhere</a>
@@ -271,44 +246,46 @@
 	$(document).ready(function () {
 
 
-	$.get("/api/articles", (articlesData) => {
-		console.log(articlesData.articles);
-		var data = articlesData.articles
-		var stringed = JSON.stringify(data);
-		$("stories-card").append('<div>' + stringed + '</div>');
-
-	});
-
-	$.get("/api/links", (linksData) => {
-		console.log(linksData);
-
-		document.addEventListener("DOMContentLoaded", function () {
-			var linksEl = document.getElementById("links");
-
-			linksEl.render();
+		$.get("/api/articles", (articlesData) => {
+			console.log(articlesData.articles.article_title);
+			var data = articlesData.articles
+			for (var i = 0; i < data.length; ++i) {
+				$("#stories-card").append('<h3>' + data[i].article_title + '</h3>');
+				$("#stories-card").append('<p>' + data[i].article_body + '</p>');
+				$("#stories-card").append('<p style="font-size: .75rem">' + "Author: " + data[i].article_author + '</p>');
+				$("#stories-card").append("<p style='font-size: .75rem; color: lightgrey;'>" + data[i].article_source + '</p>');
+			}
 		});
+
+		$.get("/api/links", (linksData) => {
+			console.log(linksData.links.link_title);
+			var data = linksData.links
+			for (var i = 0; i < data.length; ++i) {
+				$("#link-card").append(`<h4><a href=${data[i].link_text}>${data[i].link_title}</a></h4>`);
+				//			$("#link-card").append('<p>' + data[i].link_text + '</p>');
+			}
+		});
+
+
+		//
+		//		$(".card-title").css("color", "grey");
+		//
+		//
+		//		const newComment = {
+		//			name: $("#name-field").val().trim(),
+		//			comment: $("#comment-text").val().trim()
+		//		}
+		//
+		//		$("#comment-submit").on("click", function (event) {
+		//			event.preventDefault();
+		//			console.log("success");
+		//			$("#name-field").val("");
+		//			$("#comment-text").val("");
+		//			$.post("/api/feedback", newComment).then(function (data) {
+		//				console.log(data.name)
+		//			});
+		//		});
+		//
+
 	});
-
-
-//
-//		$(".card-title").css("color", "grey");
-//
-//
-//		const newComment = {
-//			name: $("#name-field").val().trim(),
-//			comment: $("#comment-text").val().trim()
-//		}
-//
-//		$("#comment-submit").on("click", function (event) {
-//			event.preventDefault();
-//			console.log("success");
-//			$("#name-field").val("");
-//			$("#comment-text").val("");
-//			$.post("/api/feedback", newComment).then(function (data) {
-//				console.log(data.name)
-//			});
-//		});
-//
-
-});
 </script>
