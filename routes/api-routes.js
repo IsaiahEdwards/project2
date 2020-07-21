@@ -22,6 +22,28 @@ module.exports = function(app) {
       })
       .catch();
   });
+  app.get("api/articles", (req, res) => {
+    db.Articles.findAll().then(function(articleResults, err) {
+      if (err) {
+        throw err;
+      }
+      console.log("articles");
+      console.log(articleResults);
+      var hbsObject = {
+        articles: articleResults.map((elem) => {
+          return {
+            article_title: elem.article_title,
+            article_author: elem.article_author,
+            article_source: elem.article_source,
+            article_body: elem.article_body,
+            article_type: elem.article_type,
+          };
+        }),
+      };
+      console.log("articles");
+      res.render("admin_articles", hbsObject);
+    });
+  });
 
   app.post("/api/events", (req, res) => {
     db.Events.create({
@@ -183,9 +205,16 @@ module.exports = function(app) {
       .then(function(feedbackResults, err) {
         if (err) {
           throw err;
-        }
-        console.log(feedbackResults);
-        res.json({ feedback: feedbackResults });
+        };
+        // console.log(feedbackResults);
+
+        // var hbsObject = {
+        //   feedback: feedbackResults.map(elem=>{return {name:elem.name, comment:elem.comment}})
+        // };
+        // console.log(hbsObject)
+        // // console.log(feedbackResults);
+        // res.render("userFeedback", hbsObject)
+        // res.json({ feedback: feedbackResults });
       })
       .catch();
   });

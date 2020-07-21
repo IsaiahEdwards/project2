@@ -52,24 +52,13 @@
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="stories" role="tabpanel" aria-labelledby="stories-tab">
 				<div class="card-body">
-					<h5 class="card-title">Stories</h5>
-					<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere ut doloribus
-						facilis quis cupiditate quas aut tempore incidunt, dolorum modi voluptatibus, dolor iure
-						nostrum. Maiores quia suscipit veritatis ipsum voluptatem velit praesentium autem eveniet
-						laborum dignissimos corrupti consequatur illum ad inventore, aperiam illo deserunt laboriosam
-						tempora. Iste facilis, est consequatur autem recusandae qui! Sapiente, eius? Explicabo tenetur
-						eos cumque amet dolores exercitationem fugiat, saepe inventore illum dignissimos. Asperiores
-						est, veniam, aperiam modi magni ex voluptatibus officia reiciendis quasi error tempore ullam
-						velit. Modi placeat qui unde. Facere, aliquam facilis error sit eos, rem doloremque at quidem
-						vitae adipisci necessitatibus qui unde laudantium inventore harum sunt. Pariatur nulla fuga
-						ratione totam quia quod soluta illo optio repellat, cupiditate ex! Hic perspiciatis nulla, culpa
-						cupiditate eaque facere alias cum! Odit blanditiis placeat repudiandae quidem iusto dolor
-						necessitatibus itaque ipsum sunt neque. Iste in quos architecto beatae optio officia sequi
-						itaque, totam repudiandae sunt voluptatem ducimus qui molestias excepturi quod dignissimos nemo,
-						sit rem hic maiores modi repellendus voluptates! Ducimus mollitia error expedita voluptatem vel
-						deleniti libero? Facilis iusto dolores dignissimos tempore soluta vero, repellendus omnis harum
-						ex molestias, provident eius pariatur quis porro nihil quidem placeat veniam qui minima
-						distinctio dolorum labore..</p>
+					<h5 class="card-title" >Stories</h5>
+					<div id="stories-card" class="card-body">
+						{{#each articles}}
+						{{articles}}
+						{{>data}}
+						{{/each}}
+					</div>
 					<a href="#" class="btn btn-primary">Go somewhere</a>
 				</div>
 			</div>
@@ -281,23 +270,45 @@
 <script>
 	$(document).ready(function () {
 
-		$($".card-title").css("color", "red");
 
-
-		const newComment = {
-			name: $("#name-field").val().trim(),
-			comment: $("#comment-text").val().trim()
-		}
-
-		$("#comment-submit").on("click", function (event) {
-			event.preventDefault();
-			console.log("success");
-			$("#name-field").val("");
-			$("#comment-text").val("");
-			$.post("/api/feedback", newComment).then(function (data) {
-				console.log(data.name)
-			});
-		});
+	$.get("/api/articles", (articlesData) => {
+		console.log(articlesData.articles);
+		var data = articlesData.articles
+		var stringed = JSON.stringify(data);
+		$("stories-card").append('<div>' + stringed + '</div>');
 
 	});
+
+	$.get("/api/links", (linksData) => {
+		console.log(linksData);
+
+		document.addEventListener("DOMContentLoaded", function () {
+			var linksEl = document.getElementById("links");
+
+			linksEl.render();
+		});
+	});
+
+
+//
+//		$(".card-title").css("color", "grey");
+//
+//
+//		const newComment = {
+//			name: $("#name-field").val().trim(),
+//			comment: $("#comment-text").val().trim()
+//		}
+//
+//		$("#comment-submit").on("click", function (event) {
+//			event.preventDefault();
+//			console.log("success");
+//			$("#name-field").val("");
+//			$("#comment-text").val("");
+//			$.post("/api/feedback", newComment).then(function (data) {
+//				console.log(data.name)
+//			});
+//		});
+//
+
+});
 </script>
