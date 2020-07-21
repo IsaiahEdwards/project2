@@ -24,7 +24,10 @@ body {
     text-align: center;
 }
 #sidebar {
-    margin-right: 5rem;
+    position: absolute;
+    width: 500px;
+    height:90rem;
+    margin-right: 1rem;
     background-color: rgb(245, 245, 245);
     border-radius: 0.2rem;
     padding: 0;
@@ -58,13 +61,13 @@ li {
     text-align: center;
 }
 .main-content {
-    position: fixed;
-    top: 75px;
+    position: absolute;
+
     left: 300px;
     right: 20px;
-    bottom: 0px;
-    width: 75%;
-    height: 700px;
+    
+    /* width: ; */
+    height:90rem;
     background-color: rgb(245, 245, 245);
     border-radius: 0.2rem;
     padding: 50px;
