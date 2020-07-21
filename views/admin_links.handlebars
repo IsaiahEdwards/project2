@@ -37,6 +37,32 @@
           <label for="rel-link">URL</label>
           <input type="text" class="form-control" id="rel-link">
         </div>
+
+      </div>
+      <div class="col-md-5 main-content justify-content-md-right">
+                <div class="table-responsive">
+                    <table id="feedback-table" class="table table-bordered table-sm " cellspacing="0" width="100%">
+                        <thead id="feedback-head">
+                            <tr>
+                                <th>Title</th>
+
+                                <th>Link</th>
+
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each links}}
+                            {{links}}
+                            {{> linkPartial}}
+
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+
         <div class="form-group">
           <label for="link-labels">Section</label>
           <select class="form-control" id="link-labels" name="link-labels">

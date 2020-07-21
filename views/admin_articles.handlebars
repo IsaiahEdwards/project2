@@ -18,13 +18,35 @@
       <button class="menu-btn"><a class="nav-link" href="/signup" style="color:black;">Add User</a></button>
       <button class="menu-btn"><a class="nav-link" href="/#" style="color:black;">Messageboard (Coming
           Soon...)</a></button>
-      <button class="menu-btn"><a class="nav-link" href="/feedback" style="color:black;">User
-          Feedback</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/feedback" style="color:black;">User Feedback</a></button>
     </div>
   </div>
+    
   <div class="col-md-5 main-content justify-content-md-right">
+      <h1>Manage Articles</h1>
+    <div class="table-responsive">
+      <table id="articles-table" class="table table-bordered table-sm " cellspacing="0" width="100%">
+        <thead id="articles-head">
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Source</th>
+            <th>Body</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
 
-    <h1>Manage Articles</h1>
+          {{#each articles}}
+          {{articles}}
+          {{> articlesPartial}}
+
+          {{/each}}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 
     <div class="card-body">
       <h3>Add Article</h3>
@@ -115,3 +137,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 </body>
+
