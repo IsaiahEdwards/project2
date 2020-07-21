@@ -22,6 +22,49 @@
     </div>
   </div>
   <div class="col-md-5 main-content justify-content-md-right">
+    <h3>Add Event</h3>
+
+    <form id="event-form">
+      <div class="form-group">
+        <label for="event-text">Title</label>
+        <input type="text" class="form-control" id="event-text">
+      </div>
+      <div class="form-group">
+        <label for="event-text">Start Date</label>
+        <input type="date" class="form-control" id="event-text">
+      </div>
+      <!--<div class="form-group">
+        <label for="event-text">Start Time</label>
+        <input type="time" class="form-control" id="event-text">
+      </div>-->
+      <div class="form-group">
+        <label for="event-text">End Date</label>
+        <input type="date" class="form-control" id="event-text">
+      </div>
+      <!--<div class="form-group">
+        <label for="event-text">End Time</label>
+        <input type="time" class="form-control" id="event-text">
+      </div>-->
+      <div class="form-group">
+        <label for="event-text">Organization</label>
+        <input type="text" class="form-control" id="event-text">
+      </div>
+      <div class="form-group">
+        <label for="event-text">Location</label>
+        <input type="text" class="form-control" id="event-text">
+      </div>
+      <div class="form-group">
+        <label for="event-text">Event Type</label>
+        <select class="form-control" id="event-labels" name="event-labels">
+          <option value="protests">Protests</option>
+          <option value="government-events">Local Government Events</option>
+          <option value="dates">Dates</option>
+        </select> </div>
+      <a class="btn btn-primary" id="event-submit">Submit</a>
+    </form>
+
+    <h3>Edit Event</h3>
+
     <div class="table-responsive">
       <table id="events-table" class="table table-bordered table-sm " cellspacing="0" width="100%">
         <thead id="events-head">
@@ -32,6 +75,8 @@
             <th>Organizers</th>
             <th>location</th>
             <th>Type</th>
+            <th>Remove</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +90,8 @@
         </tbody>
       </table>
     </div>
+
+
 
   </div>
 </div>
