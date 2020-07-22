@@ -1,38 +1,38 @@
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+		aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item active">
+				<a href="#home" class="btn btn-dark offset-1 mr-3"> Home </a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#articles">Articles</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link " href="#links">Links</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link " href="#suggestion">Suggestion</a>
+			</li>
+		</ul>
+		<a class="nav-link" href="/login" style="color:black;">Login</a>
+	</div>
+</nav>
 <div class="container">
-	<!--navbar-->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-			aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#articles">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#links">links</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#suggestion">suggestion</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- calender area -->
-    <h1 id="home">CALENDER</h1>
-    <div class="card">
-   <div id='calendar'></div>
+	<!-- calender area -->
+	<h1 id="home">CALENDAR</h1>
+	<div class="card mb-5" id="calendar-card">
+		<div id='calendar'></div>
 	</div>
 
 	<!-- articles area -->
 	<h1 id="articles">ARTICLES</h1>
-	<div class="card text-center">
+	<div class="card mb-5" id="article-card">
 		<div class="card-header">
 			<ul class="nav nav-tabs card-header-tabs" role="tablist">
 				<li class="nav-item">
@@ -53,82 +53,239 @@
 			<div class="tab-pane fade show active" id="stories" role="tabpanel" aria-labelledby="stories-tab">
 				<div class="card-body">
 					<h5 class="card-title">Stories</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<div id="stories-card" class="card-body">
+						{{#each articles}}
+						{{articles}}
+						{{>pubArtPart}}
+						{{/each}}
+					</div>
 					<a href="#" class="btn btn-primary">Go somewhere</a>
 				</div>
 			</div>
 			<div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
 				<div class="card-body">
 					<h5 class="card-title">Vital Info</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta nisi ipsum
+						molestiae autem debitis magnam aliquam? Ad modi libero provident! Distinctio consequuntur
+						eveniet qui! Aspernatur dignissimos voluptate consequatur similique nihil, eius consectetur,
+						assumenda porro voluptatibus amet ducimus repellendus nam mollitia fugiat ipsum eos aliquid,
+						inventore pariatur ipsam fugit et officia aut. Consequuntur error, fuga sed consequatur omnis
+						facilis dolores excepturi placeat ab adipisci ad beatae recusandae nulla, neque odio debitis rem
+						aperiam magni? Labore, iure non. Tenetur minus consequuntur numquam modi molestias similique
+						autem dicta esse eius quas nulla vel distinctio aspernatur aperiam vitae molestiae sed
+						praesentium veritatis assumenda corporis, reiciendis pariatur sequi? Corporis voluptatum iusto
+						debitis dolorum temporibus, eius esse, ratione libero repudiandae reiciendis exercitationem iste
+						id! Exercitationem libero voluptatum nostrum tempore impedit voluptates dignissimos dolor
+						aliquid vero ducimus! Sequi illo perspiciatis minus nam dicta veniam ex repellat iste labore
+						dolor? Animi eum reprehenderit dolor soluta alias asperiores nam dolores quaerat rem voluptates?
+						Veritatis tempora possimus, quam magnam, tempore nemo deleniti fugiat, nam impedit doloremque
+						iusto? Iusto, repellat! Atque et officiis deserunt, nulla distinctio similique, assumenda earum
+						eveniet at dignissimos voluptatem praesentium. Dolores vitae ipsum ducimus eum quisquam nihil
+						quidem ullam quia temporibus corrupti deleniti, officia animi tempore quaerat.</p>
 					<a href="#" class="btn btn-primary">Go somewhere</a>
 				</div>
 			</div>
 			<div class="tab-pane fade" id="local" role="tabpanel" aria-labelledby="local-tab">
 				<div class="card-body">
 					<h5 class="card-title">Local Officials</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quasi
+						iste quisquam minus mollitia autem omnis atque molestias exercitationem voluptatem tenetur ea ad
+						sit, velit sapiente voluptate! Temporibus reprehenderit incidunt perferendis tenetur accusantium
+						repellat officiis beatae cum velit eveniet veniam quae dolore numquam totam mollitia ex labore,
+						soluta autem necessitatibus dolorum neque excepturi reiciendis corrupti! Doloribus expedita
+						reprehenderit laborum aut tempore quia iure architecto obcaecati impedit consequatur culpa
+						voluptatem amet natus esse, totam vitae et rerum consectetur omnis deleniti? Tenetur rem ducimus
+						minima. Ipsum quaerat ducimus repellendus saepe molestiae doloribus et nesciunt, blanditiis
+						minus quis. Animi id ipsum in excepturi at illo expedita consequatur commodi delectus eveniet ad
+						omnis sequi totam cupiditate minima, nihil repellat dolorem quidem! Explicabo eius inventore,
+						quo, nihil delectus ducimus maxime ab ipsum non labore laboriosam quam fugiat magni vero
+						exercitationem tempora laborum voluptatibus repudiandae consequuntur! Asperiores aperiam, ipsum
+						impedit tempora minima hic eos doloremque aliquid qui vel officia aut porro. Consectetur eos
+						praesentium modi dolorem, necessitatibus ullam itaque quae! Temporibus deserunt esse minus
+						voluptas vero odit rem, dolores perspiciatis? Asperiores, in reiciendis! Alias velit similique
+						deleniti, officiis sunt nam. Ex ipsa tenetur adipisci inventore facere sequi nobis fugiat
+						cumque. Nam dolorem repellendus dolores reprehenderit tempore.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- links area -->
+	<h1 id="links">LINKS</h1>
+	<div class="card mb-5" id="links-card">
+		<div class="card-header">
+			<ul class="nav nav-tabs card-header-tabs" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="businesses-tab" data-toggle="tab" href="#businesses" role="tab"
+						aria-controls="businesses" aria-selected="true">Businesses</a>
+				</li>
+				<li class="nav-item">
+					<a a class="nav-link" id="donate-tab" data-toggle="tab" href="#donate" role="tab"
+						aria-controls="donate" aria-selected="false">Donations</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="petitions-tab" data-toggle="tab" href="#petitions" role="tab"
+						aria-controls="petitions" aria-selected="false">Petitions</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="businesses" role="tabpanel" aria-labelledby="businesses-tab">
+				<div class="card-body">
+					<h5 class="card-title">Businesses</h5>
+					<p class="card-text">
+					<ul id="link-card">
+
+					</ul>
+					</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="donate" role="tabpanel" aria-labelledby="donate-tab">
+				<div class="card-body">
+					<h5 class="card-title">Donations</h5>
+					<p class="card-text">
+					<ul>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+					</ul>
+					</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="petitions" role="tabpanel" aria-labelledby="petitions-tab">
+				<div class="card-body">
+					<h5 class="card-title">Petitions</h5>
+					<p class="card-text">
+					<ul>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+						title
+						<li>somekindoflink</li>
+					</ul>
+					</p>
 					<a href="#" class="btn btn-primary">Go somewhere</a>
 				</div>
 			</div>
 		</div>
 
 	</div>
-	<!-- links area -->
-	<h1 id="links">LINKS</h1>
-	<div class="card text-center" id="links">
-		<div class="card-header">
-			<ul class="nav nav-tabs card-header-tabs">
-				<li class="nav-item">
-					<a class="nav-link active" href="#">Active</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link " href="#">Disabled</a>
-				</li>
-			</ul>
-		</div>
-		<div class="card-body">
-			<h5 class="card-title">Special title treatment</h5>
-			<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			<a href="#" class="btn btn-primary">Go somewhere</a>
-		</div>
-	</div>
 	<!-- suggestion area -->
 	<h1 id="suggestion">SUGGESTIONS</h1>
-	<div class="card">
+	<div class="card mb-5">
 		<div class="card-body">
 			<div class="form-group">
+				<form class="feedback"></form>
 				<label>Full Name</label>
-				<input type="name" class="form-control" id="suggestionName" placeholder="Aaron Young ">
+				<input type="name" class="form-control" id="name-field">
 			</div>
 			<div class="form-group">
-				<label>suggestion</label>
-				<textarea class="form-control" id="suggetsion" rows="3"></textarea>
+				<label>Suggestion</label>
+				<textarea class="form-control" id="comment-text" rows="5"></textarea>
 
 			</div>
-			<a href="#" class="btn btn-primary">submit</a>
+			<a class="btn btn-primary" id="comment-submit">Submit</a>
 		</div>
 	</div>
-
 </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<footer role="main" class="footer mt-auto py-3" style="text-align: center; background-color:gray">
+	<div class="container">
+		<span style="color: white;">Place sticky footer content here.</span>
+	</div>
+</footer>
 
 <script>
-	const newComment = {
-		name: $("#name-field").val().trim(),
-		comment: $("#comment-text").val().trim()
-	}
+	$(document).ready(function () {
 
-	$("#comment-submit").on("click", function (event) {
-		event.preventDefault();
-		console.log("success")
-		$.post("/api/feedback", newComment).then(function (data) {
-			console.log(data.name)
+
+		$.get("/api/articles", (articlesData) => {
+			console.log(articlesData.articles.article_title);
+			var data = articlesData.articles
+			for (var i = 0; i < data.length; ++i) {
+				$("#stories-card").append('<h3>' + data[i].article_title + '</h3>');
+				$("#stories-card").append('<p>' + data[i].article_body + '</p>');
+				$("#stories-card").append('<p style="font-size: .75rem">' + "Author: " + data[i].article_author + '</p>');
+				$("#stories-card").append("<p style='font-size: .75rem; color: lightgrey;'>" + data[i].article_source + '</p>');
+			}
 		});
+
+		$.get("/api/links", (linksData) => {
+			console.log(linksData.links.link_title);
+			var data = linksData.links
+			for (var i = 0; i < data.length; ++i) {
+				$("#link-card").append(`<h4><a href=${data[i].link_text}>${data[i].link_title}</a></h4>`);
+				//			$("#link-card").append('<p>' + data[i].link_text + '</p>');
+			}
+		});
+
+
+		//
+		//		$(".card-title").css("color", "grey");
+		//
+		//
+		//		const newComment = {
+		//			name: $("#name-field").val().trim(),
+		//			comment: $("#comment-text").val().trim()
+		//		}
+		//
+		//		$("#comment-submit").on("click", function (event) {
+		//			event.preventDefault();
+		//			console.log("success");
+		//			$("#name-field").val("");
+		//			$("#comment-text").val("");
+		//			$.post("/api/feedback", newComment).then(function (data) {
+		//				console.log(data.name)
+		//			});
+		//		});
+		//
+
 	});
 </script>
-

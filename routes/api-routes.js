@@ -3,21 +3,245 @@ const db = require("../models");
 const passport = require("../config/passport");
 const { create } = require("express-handlebars");
 
-module.exports = function (app) {
+const isAuthenticated = require("../config/middleware/isAuthenticated");
+module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
+
+  // Events
   app.get("/api/events", (req, res) => {
     // database queries
-    db.Events.findAll().then(function(eventResults, err) {
+    db.Events.findAll()
+      .then(function(eventResults, err) {
+        if (err) {
+          throw err;
+        }
+        console.log("events");
+        res.json({ events: eventResults });
+      })
+      .catch();
+  });
+  app.get("api/articles", (req, res) => {
+    db.Articles.findAll().then(function(articleResults, err) {
       if (err) {
-        throw err
+        throw err;
       }
-      console.log("events");
-      res.json({events : eventResults})
-    }).catch();
+      console.log("articles");
+      console.log(articleResults);
+      var hbsObject = {
+        articles: articleResults.map((elem) => {
+          return {
+            id: elem.articles.id,
+            title: elem.article_title,
+            author: elem.article_author,
+            source: elem.article_source,
+            body: elem.article_body,
+            type: elem.article_type,
+          };
+        }),
+      };
+      console.log("articles");
+      res.render("admin_articles", hbsObject);
     });
+  });
 
+  app.post("/api/events", (req, res) => {
+    db.Events.create({
+      id: req.body.id,
+      title: req.body.title,
+      start: req.body.start,
+      end: req.body.end,
+      groudId: req.body.groudId,
+      location: req.body.location,
+      type: req.body.type,
+    })
+      .then(function(err) {
+        if (err) {
+          throw err;
+        }
+        console.log("events" + req);
+      })
+      .catch();
+  });
+  app.put("/api/events", function(req, res) {
+    db.Events.update(
+      {
+        title: req.body.title,
+        start: req.body.start,
+        end: req.body.end,
+        groudId: req.body.groudId,
+        location: req.body.location,
+        type: req.body.type,
+      },
+      {
+        where: {
+          id: req.body.id,
+        },
+      }
+    ).then(function(eventResults) {
+      res.json(eventResults);
+    });
+  });
+  app.delete("/api/events/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Events.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then(function(eventResults) {
+      res.json(eventResults);
+    });
+  });
+
+  // Articles
+  app.get("/api/articles", (req, res) => {
+    console.log("feedback");
+    db.Articles.findAll()
+      .then(function(articlesResults, err) {
+        if (err) {
+          throw err;
+        }
+        console.log(articlesResults);
+        res.json({ articles: articlesResults });
+      })
+      .catch();
+  });
+  app.post("/api/articles", (req, res) => {
+    db.Articles.create({
+      article_title: req.body.article_title,
+      article_author: req.body.article_author,
+      article_source: req.body.article_source,
+      article_body: req.body.article_body,
+      article_type: req.body.article_type,
+    })
+      .then(function(err) {
+        if (err) {
+          throw err;
+        }
+        console.log("articles" + req);
+      })
+      .catch();
+  });
+  app.put("/api/articles", function(req, res) {
+    db.Articles.update(
+      {
+        article_title: req.body.article_title,
+        article_author: req.body.article_author,
+        article_source: req.body.article_source,
+        article_body: req.body.article_body,
+        article_type: req.body.article_type,
+      },
+      {
+        where: {
+          id: req.body.id,
+        },
+      }
+    ).then(function(articlesResults) {
+      res.json(articlesResults);
+    });
+  });
+  app.delete("/api/articles/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Articles.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then(function(articlesResults) {
+      res.json(articlesResults);
+    });
+  });
+
+  // Links
+  app.get("/api/links", (req, res) => {
+    console.log("links");
+    db.Links.findAll()
+      .then(function(linkResults, err) {
+        if (err) {
+          throw err;
+        }
+        console.log(linkResults);
+        res.json({ links: linkResults });
+      })
+      .catch();
+  });
+  app.post("/api/links", (req, res) => {
+    db.Links.create({
+      link_title: req.body.link_title,
+      link_text: req.body.link_text,
+      link_type: req.body.link_type,
+    })
+      .then(function(err) {
+        if (err) {
+          throw err;
+        }
+        console.log("links" + req);
+      })
+      .catch();
+  });
+  app.put("/api/links", function(req, res) {
+    db.Links.update(
+      {
+        link_title: req.body.link_title,
+        link_text: req.body.link_text,
+        link_type: req.body.link_type,
+      },
+      {
+        where: {
+          id: req.body.id,
+        },
+      }
+    ).then(function(linkResults) {
+      res.json(linkResults);
+    });
+  });
+  app.delete("/api/links/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    db.Links.destroy({
+      where: {
+        id: req.params.id,
+      },
+    }).then(function(linkResults) {
+      res.json(linkResults);
+    });
+  });
+
+  // Feedback
+  app.get("/api/feedback", (req, res) => {
+    console.log("feedback");
+    db.Feedbacks.findAll()
+      .then(function(feedbackResults, err) {
+        if (err) {
+          throw err;
+        }
+        // console.log(feedbackResults);
+
+        // var hbsObject = {
+        //   feedback: feedbackResults.map(elem=>{return {name:elem.name, comment:elem.comment}})
+        // };
+        // console.log(hbsObject)
+        // // console.log(feedbackResults);
+        // res.render("userFeedback", hbsObject)
+        // res.json({ feedback: feedbackResults });
+      })
+      .catch();
+  });
+
+  app.post("/api/feedback", (req, res) => {
+    db.Feedbacks.create({
+      name: req.body.name,
+      comment: req.body.comment,
+    })
+      .then(function(err) {
+        if (err) {
+          throw err;
+        }
+        console.log("feedback" + req);
+      })
+      .catch();
+  });
+
+  //Passport
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
@@ -62,9 +286,4 @@ module.exports = function (app) {
       });
     }
   });
-
-  app.post("/api/feedback", (req, res) => {
-    db.Feedback.create(req.body).then
-  })
-
 };

@@ -1,0 +1,137 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/" id="logout">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="row">
+  <div id="sidebar" class="col-md-2">
+    <p id="menu-heading" class="">Menu</p>
+    <!-- div for listings -->
+    <div id="menu" class="medium-unstack">
+      <button class="menu-btn"><a class="nav-link" href="/members" style="color:black;">Dashboard</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/admin_events" style="color:black;">Events</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/admin_articles" style="color:black;">Articles</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/admin_links" style="color:black;">Links</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/signup" style="color:black;">Add User</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/#" style="color:black;">Messageboard (Coming
+          Soon...)</a></button>
+      <button class="menu-btn"><a class="nav-link" href="/feedback" style="color:black;">User Feedback</a></button>
+    </div>
+  </div>
+   
+  <div class="col-md-12 main-content justify-content-md-right">
+    <h1>Manage Articles</h1>
+    <div class="table-responsive">
+      <table id="articles-table" class="table table-bordered table-sm " cellspacing="0" width="100%">
+        <thead id="articles-head">
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Source</th>
+            <th>Body</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {{#each articles}}
+          {{articles}}
+          {{> articlesPartial}}
+
+          {{/each}}
+
+        </tbody>
+      </table>
+
+
+  <div class="card-body">
+    <h3>Add Article</h3>
+
+    <form id="article-form">
+      <div class="form-group">
+        <label for="article-text">Title</label>
+        <input type="text" class="form-control" id="article-text">
+      </div>
+      <div class="form-group">
+        <label for="article-labels">Section</label>
+        <select class="form-control" id="article-labels" name="article-labels">
+          <option value="stories">Stories</option>
+          <option value="vital-info">Vital Info</option>
+          <option value="local-officials">Local Officials</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="article-body">Article body</label>
+        <textarea class="form-control" id="article-text" rows="5"></textarea></textarea>
+      </div>
+      <a class="btn btn-primary" id="article-submit">Submit</a>
+    </form>
+  </div>
+
+  <div class="card-body">
+    <h3>Edit Article</h3>
+
+    <div class="table-responsive">
+      <table id="edit-articles" class="table table-bordered table-sm " cellspacing="0" width="100%">
+        <thead id="edit-articles-head">
+          <tr>
+            <th>ID</th>
+            <th>Article Title</th>
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Test Articles</td>
+            <td><button type="button" class="btn btn-danger">Delete</button>
+            </td>
+            <td><button type="button" class="btn btn-info">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Other Articles</td>
+            <td><button type="button" class="btn btn-danger">Delete</button>
+            </td>
+            <td><button type="button" class="btn btn-info">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form id="article-form">
+      <div class="form-group">
+        <label for="article-text">Title</label>
+        <input type="text" class="form-control" id="article-text">
+      </div>
+      <div class="form-group">
+        <label for="article-labels">Section</label>
+        <select class="form-control" id="article-labels" name="article-labels">
+          <option value="stories">Stories</option>
+          <option value="vital-info">Vital Info</option>
+          <option value="local-officials">Local Officials</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="article-body">Article body</label>
+        <textarea class="form-control" id="article-text" rows="5"></textarea></textarea>
+      </div>
+      <input type="submit" value="Submit" class="btn btn-primary" id="article-submit">
+    </form>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/members.js"></script>
+</body>
