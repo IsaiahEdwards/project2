@@ -4,43 +4,48 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
+<<<<<<< HEAD
 module.exports = function (app) {
+=======
+
+module.exports = function (app) {
+  // get method for content and users
+>>>>>>> e6d8b1f464c5adad0f45a564c9a8911dfcb4029b
   app.get("/", (req, res) => {
     // database queries
-    db.Events.findAll().then(function(eventResults, err) {
+    db.Events.findAll().then(function (eventResults, err) {
       if (err) {
         throw err
       }
       console.log("events");
 
-      db.Articles.findAll().then(function(articleResults, err) {
+      db.Articles.findAll().then(function (articleResults, err) {
         if (err) {
           throw err
         }
         console.log("articles");
 
-        db.Links.findAll().then(function(linkResults, err) {
-            if (err) {
-              throw err
-            }
-            console.log("links");
+        db.Links.findAll().then(function (linkResults, err) {
+          if (err) {
+            throw err
+          }
+          console.log("links");
 
-            // db.User.findAll().then(function(userResults, err) {
-            //   if (err) {
-            //     throw err
-            //   }
-            //   console.log("User");
+          // db.User.findAll().then(function(userResults, err) {
+          //   if (err) {
+          //     throw err
+          //   }
+          //   console.log("User");
 
-          const dataObj = { eventResults, articleResults, linkResults};
-     
+          const dataObj = { eventResults, articleResults, linkResults };
+
           console.log("dataObj" + JSON.stringify(dataObj));
-          res.render("index", { eventsObj: dataObj });
-          res.render("index", { articlesObj: dataObj });
-          res.render("index", { linksObj: dataObj });
+
+          res.render("index", { dataObj: dataObj });
+
         // }).catch();
       }).catch();
     }).catch();
-  }).catch();
   });
 
 
@@ -61,7 +66,7 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/admin");
     }
-  res.render("signup");
+    res.render("signup");
   });
 
   app.get("/messageboard", (req, res) => {
@@ -69,6 +74,7 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("/admin");
     }
+<<<<<<< HEAD
    res.render("messageBoard");
     
   });
@@ -82,6 +88,12 @@ module.exports = function (app) {
 
   });
 
+=======
+    res.render("messageBoard");
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
+
+>>>>>>> e6d8b1f464c5adad0f45a564c9a8911dfcb4029b
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/admin", isAuthenticated, (req, res) => {
