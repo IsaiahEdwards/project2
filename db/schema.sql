@@ -1,4 +1,4 @@
 ### Schema
-DROP DATABASE IF EXISTS database_development;
-CREATE DATABASE database_development;
-USE database_development;
+DROP DATABASE IF EXISTS organeyez_db;
+CREATE DATABASE organeyez_db;
+USE organeyez_db;
