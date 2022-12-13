@@ -22,7 +22,7 @@
     "@fullcalendar/daygrid": "^5.1.0",
     "@handlebars/allow-prototype-access": "^1.0.3",
     "bcryptjs": "^2.4.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^5.1.0",
     "express-session": "^1.17.1",
     "init": "^0.1.2",
